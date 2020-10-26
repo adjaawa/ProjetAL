@@ -21,6 +21,10 @@
             {
                 include('includes/templates/details_articles.php');
             }
+            else if (isset($_GET['rubrique'])) 
+            {
+                include('includes/templates/list_articles_rubrique.php');
+            }
             else
             {
                 include('includes/templates/list_articles.php');
