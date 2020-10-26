@@ -9,7 +9,7 @@
 			$query = $bdd->query($sql);
 			$query->execute();
 			$data = $query->fetchall(PDO::FETCH_OBJ);
-
+			
 			return $data;
 		}
 
