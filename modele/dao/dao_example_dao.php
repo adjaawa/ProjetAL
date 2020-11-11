@@ -5,7 +5,7 @@
 		{
 			require("connect_bd.php"); 
 			
-			$sql = "Select id, titre, date_pub from articles";
+			$sql = "Select id, titre, resume, date_pub from articles";
 			$query = $bdd->query($sql);
 			$query->execute();
 			$data = $query->fetchall(PDO::FETCH_OBJ);
@@ -29,7 +29,8 @@
 		{
 			require("connect_bd.php");
 
-			$sql = "Select id, titre, date_pub from articles where rubrique = '$rubrique'";
+			//SELECT * FROM `articles` WHERE id_categorie = (SELECT id FROM categories WHERE nom="jeux");
+			$sql = "Select id, titre, resume, date_pub from articles where id_categorie = (SELECT id FROM categories WHERE nom='$rubrique')";
 			$query = $bdd->query($sql);
 			$query->execute();
 			$data = $query->fetchall(PDO::FETCH_OBJ);

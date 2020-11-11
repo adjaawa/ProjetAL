@@ -9,6 +9,10 @@
                     <?php echo $article->titre;?>
                 </h1>
                 <br>
+                <h4 style="font-weight:bolder; color:white;">
+                        <?php echo $article->resume;?>
+                </h4>
+                <br>
                 <p><input type="submit" class="btn btn-primary btn-sm btn-esp" value="EN SAVOIR PLUS" role="button"></p>
                 <input type="hidden" name="article" value="<?php echo $article->id  ?>">
             </div>
