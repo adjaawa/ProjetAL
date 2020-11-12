@@ -32,37 +32,32 @@
         </div>
 
         <div class="col-md-9 section-2"> 
-            <h2 class="title">Articles</h2>
+            <h2 class="title">Modification Article</h2>
             
-            <table class="table table-striped">
-                <thead class="thead-dark">
-                    <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Titre</th>
-                    <th scope="col">Resume</th>
-                    <th scope="col">Date publication</th>
-                    </tr>
-                </thead>
-                <tbody>
-            <?php
+            <form class="form-horizontal" action="index.php?creation_article=1&post=1" method="POST">
 
-                foreach($data as $article): 
+                <div class="form-group">
+                    <label for="" class="col-sm-3 control-label">Nom catégorie</label>
+                    <div class="col-sm-9">
+                    <input type="text" class="form-control" name="titre" id="" placeholder="">
+                    </div>
+                </div>
 
-            ?>
-                
-                    <tr>
-                    <th scope="row"><?php echo $article->id ?></th>
-                    <td><?php echo $article->titre ?></td>
-                    <td><?php echo $article->resume ?>tto</td>
-                    <td><?php echo $article->date_pub ?></td>
-                    </tr>
-                
-                <?php
-                    endforeach;
-                ?>
 
-                </tbody>
-            </table>
+                <div class="form-group">
+                    <label for="" class="col-sm-3 control-label">Description catégorie</label>
+                    <div class="col-sm-9">
+                    <input type="text" class="form-control" name="resume" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-10">
+                    <button type="submit" class="btn btn-default">Modifier catégorie</button>
+                    </div>
+                </div>
+            </form>
+
         </div>
         <br>
     </div>

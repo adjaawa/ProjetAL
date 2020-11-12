@@ -20,6 +20,29 @@
 	{
 		$controller_article->accueil();
 	}
+	else if (isset($_GET['creation_article'])) 
+	{
+		if (isset($_GET['post'])) 
+		{
+			$controller_article->ajouter_article();
+		}
+		else
+		{
+			$controller_article->accueil();
+		}
+	}
+	else if (isset($_GET['modification_article'])) 
+	{
+		$controller_article->accueil();
+	}
+	else if (isset($_GET['creation_categorie'])) 
+	{
+		$controller_article->accueil();
+	}
+	else if (isset($_GET['modification_categorie'])) 
+	{
+		$controller_article->accueil();
+	}
 	else if (isset($_POST['article']) && !empty($_POST['article'])) 
 	{
 		$controller_article->article($_POST['article']);

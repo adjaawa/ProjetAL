@@ -9,15 +9,17 @@
 
             $requete = $usersDao->authentify_users($username, $password);
 
-            if ($requete != null) 
+            if ($requete != false) 
             {
                 $_SESSION['username'] = $username;
 
                 $donnees = $usersDao->get_user_profil($username);
 
                 $_SESSION['profil'] = $donnees[0]['profil'];
+                $_SESSION['id'] = $donnees[0]['id'];
+                $profil = $_SESSION['username'];
 
-                header("Location: index.php");
+                header("Location: index.php?profil=$profil");
             }
             else
             {

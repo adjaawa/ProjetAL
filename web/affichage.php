@@ -33,6 +33,22 @@
             {
                 include('includes/templates/gestion_articles/home.php');
             }
+            else if(isset($_GET['creation_article']))
+            {
+                include('includes/templates/gestion_articles/creation_article.php');
+            }
+            else if(isset($_GET['modification_article']))
+            {
+                include('includes/templates/gestion_articles/modification_article.php');
+            }
+            else if(isset($_GET['creation_categorie']))
+            {
+                include('includes/templates/gestion_articles/creation_categorie.php');
+            }
+            else if(isset($_GET['modification_categorie']))
+            {
+                include('includes/templates/gestion_articles/modification_categorie.php');
+            }
             else
             {
                 include('includes/templates/list_articles.php');

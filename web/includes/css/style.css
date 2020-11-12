@@ -10,3 +10,55 @@
     font-weight: bold;
 }
 
+.section-1
+{ 
+	min-height: 590px !important;
+	width: 270px;
+	/* min-width: 30px; */
+    background-color: #EEEEEE;
+}
+
+.menu
+{
+	background-color: #EEEEEE;
+}
+
+.menuR
+{
+	color:rgb(16, 100, 121);
+	border-bottom: 0px;
+}
+
+.bordureMenu-active
+{ 
+	border: 1px solid rgb(199, 198, 198); 
+	padding: 10px;
+	text-align: center;
+	margin-bottom: 3px;
+	background-color: #7E53FF;
+	color: white;
+	text-decoration: none;
+}
+.bordureMenu
+{ 
+	padding: 10px;
+	text-align: center;
+	margin-bottom: 3px;
+	background-color: #EEEEEE;
+	color: #7E53FF;
+	text-decoration: none;
+}
+
+.title
+{
+	font-weight: bolder;
+	opacity: 0.8;
+	padding-bottom: 4px;
+	border-bottom: solid 5px gray ;
+}
+
+.titre-menu
+{
+	border-bottom: solid 5px gray ;
+	
+}

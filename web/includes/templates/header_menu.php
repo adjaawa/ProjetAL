@@ -37,7 +37,7 @@
 			<span class="glyphicon glyphicon-log-in"></span>&nbsp Deconnexion
 		</a>
 		
-		<a href="index.php?connexion=1" class="btn btn-primary" style="float: right; margin-right:12px">
+		<a href="index.php?gestion_articles=1" class="btn btn-primary" style="float: right; margin-right:12px">
 			<span class="glyphicon glyphicon-log-out"></span>&nbsp Gérer
 		</a>
 
