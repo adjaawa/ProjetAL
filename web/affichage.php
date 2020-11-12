@@ -25,6 +25,14 @@
             {
                 include('includes/templates/list_articles_rubrique.php');
             }
+            else if (isset($_GET['connexion'])) 
+            {
+                include('includes/templates/authentification/connexion.php');
+            }
+            else if(isset($_GET['gestion_articles']))
+            {
+                include('includes/templates/gestion_articles/home.php');
+            }
             else
             {
                 include('includes/templates/list_articles.php');

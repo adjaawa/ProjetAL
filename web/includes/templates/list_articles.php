@@ -42,8 +42,8 @@
 
                 <nav aria-label="...">
                     <ul class="pager">
-                        <li class="<?php if ($page == 0) { echo "previous disabled";} else { echo "previous"; }?>"><a href="?page=<?php if ($page == 0) { echo $page;} else { echo $page-1;} ?>"><span aria-hidden="true">&larr;</span> Older</a></li>
-                        <li class="<?php if ($page == $max_page-1) { echo "next disabled";} else { echo "next"; }?>"><a href="?page=<?php if ($page == $max_page-1) { echo $page;} else {echo $page+1;} ?>">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                        <li class="<?php if ($page == 0) { echo "previous disabled";} else { echo "previous"; }?>"><a href="?page=<?php if ($page == 0) { echo $page;} else { echo $page-1;} ?>"><span aria-hidden="true">&larr;</span>précédent</a></li>
+                        <li class="<?php if ($page == $max_page-1) { echo "next disabled";} else { echo "next"; }?>"><a href="?page=<?php if ($page == $max_page-1) { echo $page;} else {echo $page+1;} ?>">suivant<span aria-hidden="true">&rarr;</span></a></li>
                     </ul>
                 </nav>
             </form>

@@ -1,5 +1,5 @@
 <?php
-	require("modele/dao/dao_example_dao.php");
+	require("modele/dao/dao_authentification.php");
 
 	class ControllerArticle
 	{
