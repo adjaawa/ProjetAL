@@ -19,7 +19,7 @@
                 $_SESSION['id'] = $donnees[0]['id'];
                 $profil = $_SESSION['username'];
 
-                header("Location: index.php?profil=$profil");
+                header("Location: index.php?");
             }
             else
             {

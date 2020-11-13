@@ -40,6 +40,32 @@
 
 			header("Location:index.php?modification_categorie=1&categorie=$categorie");
 		}
+
+
+		public function ajouter_categorie()
+		{
+			$exampleDao = new ExampleDao();
+
+			$nom = $_POST['nom'];
+			$description = $_POST['description'];
+
+			$data = $exampleDao->post_categorie($nom, $description);
+
+			header("Location:index.php?modification_categorie=1");
+		}
+
+		public function modifier_categorie()
+		{
+			$exampleDao = new ExampleDao();
+
+			$id = $_POST['id'];
+			$description = $_POST['description'];
+			$nom = $_POST['nom'];
+
+			$data = $exampleDao->update_categorie($id, $description, $nom);
+
+			header("Location:index.php?modification_categorie=1");
+		}
 		
 
 		public function article($article)

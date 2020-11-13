@@ -32,49 +32,29 @@
         </div>
 
         <div class="col-md-9 section-2"> 
-            <h2 class="title">Modification catégorie</h2>
+            <h2 class="title">Création Catégorie</h2>
             
-            <form class="form-horizontal" action="index.php?modification_categorie=1&update=1" method="POST">
+            <form class="form-horizontal" action="index.php?creation_categorie=1&post=1" method="POST">
 
                 <div class="form-group">
-                    <label for="text" class="col-sm-4 control-label">Sélectionner une catégorie à modifier </label>
-                    <div class="col-sm-2">
-                    <select  type="text" name="categorie" id="pav" class="form-control" required style="background-color:;">
-                        <?php foreach($categorie as $cat): ?>
-
-                            <option value="<?php echo $cat->nom ?>"><?php echo $cat->nom ?></option>
-
-                        <?php endforeach; ?>
-                    </select >
-                    <input type="hidden" name="id" value="<?php echo $cat->id ?>">
+                    <label for="" class="col-sm-3 control-label">Nom catégorie</label>
+                    <div class="col-sm-9">
+                    <input type="text" class="form-control" name="nom" id="" placeholder="">
                     </div>
-
-                    <button type="submit" class="btn btn-default">Valider</button>
                 </div>
-
-            </form>
-             <br> 
-
-            <h2 class="title">Suppression catégorie</h2>
-
-            <form class="form-horizontal" action="index.php?modification_categorie=1&delete=1" method="POST">
 
                 <div class="form-group">
-                    <label for="text" class="col-sm-4 control-label">Sélectionner une catégorie à modifier </label>
-                    <div class="col-sm-2">
-                    <select  type="text" name="categorie" id="pav" class="form-control" required style="background-color:;">
-                        <?php foreach($categorie as $cat): ?>
-
-                            <option value="<?php echo $cat->id ?>"><?php echo $cat->nom ?></option>
-
-                        <?php endforeach; ?>
-                    </select >
-                    
+                    <label for="" class="col-sm-3 control-label">Description catégorie</label>
+                    <div class="col-sm-9">
+                    <input type="text" class="form-control" name="description" placeholder="">
                     </div>
-
-                    <button type="submit" class="btn btn-default">Valider</button>
                 </div>
 
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-10">
+                    <button type="submit" class="btn btn-default">Créer Catégorie</button>
+                    </div>
+                </div>
             </form>
 
         </div>

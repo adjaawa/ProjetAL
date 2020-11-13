@@ -32,27 +32,28 @@
         </div>
 
         <div class="col-md-9 section-2"> 
-            <h2 class="title">Modification Article</h2>
+            <h2 class="title">Modification Catégorie</h2>
             
-            <form class="form-horizontal" action="index.php?creation_article=1&post=1" method="POST">
+            <form class="form-horizontal" action="index.php?modification_categorie=1&update=2" method="POST">
 
                 <div class="form-group">
                     <label for="" class="col-sm-3 control-label">Nom catégorie</label>
                     <div class="col-sm-9">
-                    <input type="text" class="form-control" name="titre" id="" placeholder="">
+                    <input type="text" class="form-control" name="nom" id="" placeholder="<?php echo $_POST['categorie']; echo $_POST['id']?>">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="" class="col-sm-3 control-label">Description catégorie</label>
                     <div class="col-sm-9">
-                    <input type="text" class="form-control" name="resume" placeholder="">
+                    <input type="text" class="form-control" name="description" placeholder="">
+                    <input type="hidden" name="id" value="<?php echo $_POST['id'] ?>">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-10">
-                    <button type="submit" class="btn btn-default">Modifier catégorie</button>
+                    <button type="submit" class="btn btn-default">Modifier Catégorie</button>
                     </div>
                 </div>
             </form>

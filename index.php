@@ -33,26 +33,37 @@
 	}
 	else if (isset($_GET['modification_article'])) 
 	{
+		$controller_article->accueil();
+	}
+	else if (isset($_GET['creation_categorie'])) 
+	{
+		if (isset($_GET['post']) && isset($_POST['nom']) && isset($_POST['description'])) 
+		{
+			$controller_article->ajouter_categorie();
+		}
+		else
+		{
+			$controller_article->accueil();
+		}
+	}
+	else if (isset($_GET['modification_categorie'])) 
+	{
 		if (isset($_GET['delete']) && isset($_POST['categorie'])) 
 		{
 			$controller_article->delete_categorie();
+		}
+		else if (isset($_GET['update']) && $_GET['update'] == 2) 
+		{
+			$controller_article->modifier_categorie();
 		}
 		else if (isset($_GET['update'])) 
 		{
 			$controller_article->accueil();
 		}
-		else
+		else 
 		{
 			$controller_article->accueil();
 		}	
-	}
-	else if (isset($_GET['creation_categorie'])) 
-	{
-		$controller_article->accueil();
-	}
-	else if (isset($_GET['modification_categorie'])) 
-	{
-		$controller_article->accueil();
 	}
 	else if (isset($_POST['article']) && !empty($_POST['article'])) 
 	{

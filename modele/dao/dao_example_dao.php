@@ -46,6 +46,19 @@
 			return $query;
 		}
 
+		public function post_categorie($nom, $description)
+		{
+			require("connect_bd.php"); 
+
+			$sql="INSERT INTO categories (nom, description) VALUES(:nom,:description)";
+			$query = $bdd->prepare($sql);
+			$query->bindParam(':nom',$nom,PDO::PARAM_STR);
+			$query->bindParam(':description',$description,PDO::PARAM_STR);
+			$query->execute();
+			
+			return $query;
+		}
+
 
 
 		public function delete_categorie($categorie)
@@ -57,6 +70,17 @@
 			
 			return $query;
 		}
+
+		public function update_categorie($id, $description, $nom)
+		{
+			require("connect_bd.php"); 	
+
+			$sql="UPDATE categories SET nom = '$nom', description = '$description' WHERE id='$id'";
+			$query = $bdd->exec($sql);
+			
+			return $query;
+		}
+
 
 
 

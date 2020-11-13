@@ -21,11 +21,11 @@
     //On défini le nombre maximum de pages
     $max_page = sizeof($data)/$nb_articles_par_page;
     
+    // var_dump($data);
     foreach($data as $article): 
         if ($article->id > $min_id && $article->id <= $max_id) 
         {
 ?>
-
             <form action="index.php" method="post">
                 <div class="well lewell">
                     <h1 style="font-weight:bolder; color:white;">
@@ -48,6 +48,7 @@
                 </nav>
             </form>
 
-<?php   }
+<?php   
+    }
     endforeach; 
 ?>  
