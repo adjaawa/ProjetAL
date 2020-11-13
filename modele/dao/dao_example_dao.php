@@ -46,7 +46,17 @@
 			return $query;
 		}
 
-	
+
+
+		public function delete_categorie($categorie)
+		{
+			require("connect_bd.php"); 	
+
+			$sql="DELETE FROM categories WHERE id = '$categorie'";
+			$query = $bdd->exec($sql);
+			
+			return $query;
+		}
 
 
 

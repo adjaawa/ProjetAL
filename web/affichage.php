@@ -49,6 +49,10 @@
             {
                 include('includes/templates/gestion_articles/modification_categorie.php');
             }
+            else if (isset($_GET['update'])) 
+            {
+                include('includes/templates/gestion_articles/modification_categorie_update.php');
+            }
             else
             {
                 include('includes/templates/list_articles.php');

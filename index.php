@@ -33,7 +33,18 @@
 	}
 	else if (isset($_GET['modification_article'])) 
 	{
-		$controller_article->accueil();
+		if (isset($_GET['delete']) && isset($_POST['categorie'])) 
+		{
+			$controller_article->delete_categorie();
+		}
+		else if (isset($_GET['update'])) 
+		{
+			$controller_article->accueil();
+		}
+		else
+		{
+			$controller_article->accueil();
+		}	
 	}
 	else if (isset($_GET['creation_categorie'])) 
 	{

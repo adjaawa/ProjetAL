@@ -43,7 +43,6 @@
                     </div>
                 </div>
 
-
                 <div class="form-group">
                     <label for="" class="col-sm-3 control-label">Description catégorie</label>
                     <div class="col-sm-9">

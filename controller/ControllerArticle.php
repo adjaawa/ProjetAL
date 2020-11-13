@@ -29,8 +29,18 @@
 
 				header("Location:index.php?gestion_articles=1");
 			}
-			require("web/affichage.php");
 		}
+
+		public function delete_categorie()
+		{
+			$categorie = $_POST['categorie'];
+
+			$exampleDao = new ExampleDao();
+			$data = $exampleDao->delete_categorie($categorie);
+
+			header("Location:index.php?modification_categorie=1&categorie=$categorie");
+		}
+		
 
 		public function article($article)
 		{
