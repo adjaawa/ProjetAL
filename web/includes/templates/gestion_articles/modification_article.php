@@ -40,35 +40,47 @@
                 }                    
                      
             ?>
+            
                  
         </div>
 
         <div class="col-md-9 section-2"> 
-            <h2 class="title" style="color: #7E53FF;">Création Catégorie</h2>
-            
-            <form class="form-horizontal" action="index.php?creation_categorie=1&post=1" method="POST">
+            <h2 class="title" style="color: #7E53FF;">Modification Article</h2>
+            <form action="">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titre</th>
+                        <th scope="col">Resume</th>
+                        <th scope="col">Actitons</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                <?php
 
-                <div class="form-group">
-                    <label for="" class="col-sm-3 control-label">Nom catégorie</label>
-                    <div class="col-sm-9">
-                    <input type="text" class="form-control" name="nom" id="" placeholder="">
-                    </div>
-                </div>
+                    foreach($data as $article): 
 
-                <div class="form-group">
-                    <label for="" class="col-sm-3 control-label">Description catégorie</label>
-                    <div class="col-sm-9">
-                    <input type="text" class="form-control" name="description" placeholder="">
-                    </div>
-                </div>
+                ?>
+                    
+                        <tr>
+                        <th scope="row"><?php echo $article->id ?></th>
+                        <td><?php echo $article->titre ?></td>
+                        <td><?php echo $article->resume ?></td>
+                        <td class="col-md-4">
+                            <a href="index.php?modification_article=1&update_article=1&id=<?php echo $article->id ?>">Modifier</a>
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <a href="index.php?modification_article=1&delete=1&id=<?php echo $article->id ?>">Supprimer</a>
+                        </td>
+                        </tr>
+                    
+                    <?php
+                        endforeach;
+                    ?>
 
-                <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-10">
-                    <button type="submit" class="btn btn-default">Créer Catégorie</button>
-                    </div>
-                </div>
+                    </tbody>
+                </table>
             </form>
-
         </div>
         <br>
     </div>

@@ -5,7 +5,7 @@
 		{
 			require("connect_bd.php"); 
 			
-			$sql = "Select id, username, password, profil from compte_users";
+			$sql = "Select * from compte_users";
 			$query = $bdd->query($sql);
 			$query->execute();
 			$data = $query->fetchall(PDO::FETCH_OBJ);

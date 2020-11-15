@@ -3,14 +3,8 @@
 
 	if (isset($_GET['rubrique'])) 
 	{
-		if ($_GET['rubrique'] == "jeux")
-		{
-			$a_jeux = "active";
-		}
-		elseif ($_GET['rubrique'] == "smartphones") 
-		{
-			$a_smartphones = "active";
-		}
+		$a = "active";	
+		$a_accueil = "";
 	}
 	else
 	{
@@ -24,9 +18,16 @@
 
 
 <ul class="nav nav-tabs">
-    <li role="presentation" class="<?php echo $a_accueil ?>"><a href="index.php">Accueil</a></li>
-    <li role="presentation" class="<?php echo $a_smartphones ?>"><a href="index.php?rubrique=smartphones">Actu Smartphones</a></li>
-    <li role="presentation" class="<?php echo $a_jeux ?>"><a href="index.php?rubrique=jeux">Actu jeux-videos</a></li>
+		<li role="presentation" class="<?php echo $a_accueil; ?>"><a href="index.php">Accueil</a></li>
+	<?php
+		foreach($rub as $dataa): 
+	?>
+
+		<li role="presentation" class="<?php if($_GET['rubrique'] == $dataa->nom) { echo $a; } ?>"><a href="index.php?rubrique=<?php echo $dataa->nom ?>"><?php echo $dataa->nom ?></a></li>
+	
+	<?php
+		endforeach;
+	?>
 
 	<?php 
 		if (isset($_SESSION['username'])) 

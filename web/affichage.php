@@ -37,6 +37,10 @@
             {
                 include('includes/templates/gestion_articles/creation_article.php');
             }
+            else if(isset($_GET['update_article']))
+            {
+                include('includes/templates/gestion_articles/modification_article_update.php');
+            }
             else if(isset($_GET['modification_article']))
             {
                 include('includes/templates/gestion_articles/modification_article.php');
@@ -52,6 +56,10 @@
             else if(isset($_GET['modification_categorie']))
             {
                 include('includes/templates/gestion_articles/modification_categorie.php');
+            }
+            else if(isset($_GET['afficher_user']))
+            {
+                include('includes/templates/gestion_users/afficher_user.php');
             }
             else
             {

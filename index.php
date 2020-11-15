@@ -16,6 +16,10 @@
 			header("location:index.php");
 		}
 	}
+	else if (isset($_GET['afficher_user'])) 
+	{
+		$controller_authentification->afficher_users();
+	}
 	else if (isset($_GET['gestion_articles'])) 
 	{
 		$controller_article->accueil();
@@ -33,7 +37,22 @@
 	}
 	else if (isset($_GET['modification_article'])) 
 	{
-		$controller_article->accueil();
+		if (isset($_GET['delete']) && isset($_GET['id'])) 
+		{
+			$controller_article->delete_article();
+		}
+		else if (isset($_GET['update_article']) && $_GET['update_article'] == 2) 
+		{
+			$controller_article->modifier_article();
+		}
+		else if (isset($_GET['update_article']) && isset($_GET['id'])) 
+		{
+			$controller_article->accueil();
+		}
+		else 
+		{
+			$controller_article->accueil();
+		}
 	}
 	else if (isset($_GET['creation_categorie'])) 
 	{

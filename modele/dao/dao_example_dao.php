@@ -13,6 +13,18 @@
 			return $data;
 		}
 
+		public function get_article_by_id($id)
+		{
+			require("connect_bd.php"); 
+			
+			$sql = "Select id, titre, resume, date_pub from articles Where id = '$id'";
+			$query = $bdd->query($sql);
+			$query->execute();
+			$data = $query->fetchall(PDO::FETCH_OBJ);
+			
+			return $data;
+		}
+
 		public function get_categorie()
 		{
 			require("connect_bd.php"); 
@@ -24,6 +36,7 @@
 			
 			return $data;
 		}
+
 
 		public function post_article($titre, $categorie, $resume, $contenu, $id)
 		{
@@ -45,6 +58,29 @@
 			
 			return $query;
 		}
+
+		public function delete_article($article)
+		{
+			require("connect_bd.php"); 	
+
+			$sql="DELETE FROM articles WHERE id = '$article'";
+			$query = $bdd->exec($sql);
+			
+			return $query;
+		}
+
+
+		public function update_article($id, $titre, $resume, $contenu)
+		{
+			require("connect_bd.php"); 	
+
+			$sql="UPDATE articles SET titre = '$titre', resume = '$resume', contenu = '$contenu' WHERE id='$id'";
+			$query = $bdd->exec($sql);
+			
+			return $query;
+		}
+
+
 
 		public function post_categorie($nom, $description)
 		{

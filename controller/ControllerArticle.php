@@ -8,6 +8,13 @@
 			$exampleDao = new ExampleDao();
 			$data = $exampleDao->get_articles();
 			$categorie = $exampleDao->get_categorie();
+
+			if(isset($_GET['id']))
+			{
+				$article  = $exampleDao->get_article_by_id($_GET['id']);
+			}
+
+			$rub = $exampleDao->get_categorie();
 			require("web/affichage.php");
 		}
 
@@ -30,6 +37,33 @@
 				header("Location:index.php?gestion_articles=1");
 			}
 		}
+
+
+		public function delete_article()
+		{
+			$article = $_GET['id'];
+
+			$exampleDao = new ExampleDao();
+			$data = $exampleDao->delete_article($article);
+
+			header("Location:index.php?modification_article=1");
+		}
+
+
+		public function modifier_article()
+		{
+			$exampleDao = new ExampleDao();
+
+			$id = $_GET['id'];
+			$titre = $_POST['titre'];
+			$resume = $_POST['resume'];
+			$contenu = $_POST['contenu'];
+
+			$data = $exampleDao->update_article($id, $titre, $resume, $contenu);
+
+			header("Location:index.php?modification_article=1");
+		}
+
 
 		public function delete_categorie()
 		{
@@ -73,6 +107,8 @@
 			$exampleDao = new ExampleDao();
 			$data = $exampleDao->get_details_article($article);
 			$details = true;
+
+			$rub = $exampleDao->get_categorie();
 			require("web/affichage.php");
 		}
 
@@ -80,6 +116,8 @@
 		{
 			$exampleDao = new ExampleDao();
 			$data = $exampleDao->get_articles_rubrique($rubrique);
+
+			$rub = $exampleDao->get_categorie();
 			require("web/affichage.php");
 		}
 	}

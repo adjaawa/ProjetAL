@@ -28,11 +28,24 @@
                     <a href="index.php?modification_categorie=1"><div class="row bordureMenu" style="font-weight: bold;">Modifier/Supprimer catégorie</div></a>
                 </div>
             </div>
+
+
+            <br>
+            
+            <?php 
+
+                if($_SESSION['profil'] == "admin")
+                {
+                    include("C:/xampp/htdocs/tp_al/mvc/avec_mvc/web/includes/templates/inc/menu_users.php");
+                }                    
+                     
+            ?>
+
                  
         </div>
 
         <div class="col-md-9 section-2"> 
-            <h2 class="title">Créaton article</h2>
+            <h2 class="title" style="color: #7E53FF;">Créaton article</h2>
             
             <form class="form-horizontal" action="index.php?creation_article=1&post=1" method="POST">
 

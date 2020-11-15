@@ -20,15 +20,10 @@
             </div>
             <div class="row menuR">
                 <div class="col-md-12 menu">
-                    <a href="index.php?creation_categorie=1"><div class="row bordureMenu" style="font-weight: bold;">Créer une nouvelle catégorie</div></a>
-                </div>
-            </div>
-            <div class="row menuR">
-                <div class="col-md-12 menu">
+                    <a href="index.php?creation_  
                     <a href="index.php?modification_categorie=1"><div class="row bordureMenu" style="font-weight: bold;">Modifier/Supprimer catégorie</div></a>
                 </div>
             </div>
-
 
             <br>
             
@@ -44,31 +39,41 @@
         </div>
 
         <div class="col-md-9 section-2"> 
-            <h2 class="title" style="color: #7E53FF;">Création Catégorie</h2>
+            <h2 class="title" style="color: #7E53FF;">Utitilisateurs</h2>
             
-            <form class="form-horizontal" action="index.php?creation_categorie=1&post=1" method="POST">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prenom</th>
+                    <th scope="col">email</th>  
+                    <th scope="col">username</th>  
+                    <th scope="col">profil</th>  
+                    </tr>
+                </thead>
+                <tbody>
+            <?php
 
-                <div class="form-group">
-                    <label for="" class="col-sm-3 control-label">Nom catégorie</label>
-                    <div class="col-sm-9">
-                    <input type="text" class="form-control" name="nom" id="" placeholder="">
-                    </div>
-                </div>
+                foreach($data as $user): 
 
-                <div class="form-group">
-                    <label for="" class="col-sm-3 control-label">Description catégorie</label>
-                    <div class="col-sm-9">
-                    <input type="text" class="form-control" name="description" placeholder="">
-                    </div>
-                </div>
+            ?>
+                
+                    <tr>
+                    <th scope="row"><?php echo $user->id ?></th>
+                    <td><?php echo $user->nom ?></td>
+                    <td><?php echo $user->prenom ?>tto</td>
+                    <td><?php echo $user->email ?></td>
+                    <td><?php echo $user->username ?></td>
+                    <td><?php echo $user->profil ?></td>
+                    </tr>
+                
+                <?php
+                    endforeach;
+                ?>
 
-                <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-10">
-                    <button type="submit" class="btn btn-default">Créer Catégorie</button>
-                    </div>
-                </div>
-            </form>
-
+                </tbody>
+            </table>
         </div>
         <br>
     </div>

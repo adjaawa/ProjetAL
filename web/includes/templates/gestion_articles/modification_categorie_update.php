@@ -28,32 +28,63 @@
                     <a href="index.php?modification_categorie=1"><div class="row bordureMenu" style="font-weight: bold;">Modifier/Supprimer catégorie</div></a>
                 </div>
             </div>
+
+
+            <br>
+            
+            <?php 
+
+                if($_SESSION['profil'] == "admin")
+                {
+                    include("C:/xampp/htdocs/tp_al/mvc/avec_mvc/web/includes/templates/inc/menu_users.php");
+                }                    
+                     
+            ?>
                  
         </div>
 
         <div class="col-md-9 section-2"> 
-            <h2 class="title">Modification Catégorie</h2>
+            <h2 class="title" style="color: #7E53FF;">Modification Catégorie</h2>
             
-            <form class="form-horizontal" action="index.php?modification_categorie=1&update=2" method="POST">
+            <form class="form-horizontal" action="index.php?creation_article=1&post=1" method="POST">
 
                 <div class="form-group">
-                    <label for="" class="col-sm-3 control-label">Nom catégorie</label>
-                    <div class="col-sm-9">
-                    <input type="text" class="form-control" name="nom" id="" placeholder="<?php echo $_POST['categorie']; echo $_POST['id']?>">
+                    <label for="" class="col-sm-2 control-label">Titre Article</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" name="titre" id="" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="" class="col-sm-3 control-label">Description catégorie</label>
-                    <div class="col-sm-9">
-                    <input type="text" class="form-control" name="description" placeholder="">
-                    <input type="hidden" name="id" value="<?php echo $_POST['id'] ?>">
+                    <label for="text" class="col-sm-2 control-label">Catégorie Article</label>
+                    <div class="col-sm-2">
+                    <select  type="text" name="categorie" id="pav" class="form-control" required style="background-color:;">
+                        <?php foreach($categorie as $cat): ?>
+
+                            <option value="<?php echo $cat->id ?>"><?php echo $cat->nom ?></option>
+
+                        <?php endforeach; ?>
+                    </select >
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-10">
-                    <button type="submit" class="btn btn-default">Modifier Catégorie</button>
+                    <label for="" class="col-sm-2 control-label">Résumé Article</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" name="resume" id="" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">Article complet</label>
+                    <div class="col-sm-10">
+                    <textarea id="story" name="contenu" rows="15" cols="106"> </textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Ajouter Article</button>
                     </div>
                 </div>
             </form>
