@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container conteneur">
 
         <?php include('includes/templates/header_menu.php') ?>
         
@@ -57,9 +57,21 @@
             {
                 include('includes/templates/gestion_articles/modification_categorie.php');
             }
+            else if(isset($_GET['creation_user']))
+            {
+                include('includes/templates/gestion_users/creation_user.php');
+            }
             else if(isset($_GET['afficher_user']))
             {
                 include('includes/templates/gestion_users/afficher_user.php');
+            }
+            else if(isset($_GET['update_user']))
+            {
+                include('includes/templates/gestion_users/modification_user_update.php');
+            }
+            else if(isset($_GET['modification_user']))
+            {
+                include('includes/templates/gestion_users/modification_user.php');
             }
             else
             {

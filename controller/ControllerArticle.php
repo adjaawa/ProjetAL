@@ -11,7 +11,7 @@
 
 			if(isset($_GET['id']))
 			{
-				$article  = $exampleDao->get_article_by_id($_GET['id']);
+				$article = $exampleDao->get_article_by_id($_GET['id']);
 			}
 
 			$rub = $exampleDao->get_categorie();

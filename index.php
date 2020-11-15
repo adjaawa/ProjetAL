@@ -20,6 +20,37 @@
 	{
 		$controller_authentification->afficher_users();
 	}
+	else if (isset($_GET['creation_user'])) 
+	{
+		if (isset($_GET['post'])) 
+		{
+			$controller_authentification->ajouter_user();
+		}
+		else
+		{
+			$controller_authentification->afficher_users();
+		}
+		
+	}
+	else if(isset($_GET['modification_user']))
+	{
+		if (isset($_GET['delete']) && isset($_GET['id'])) 
+		{
+			$controller_authentification->delete_user();
+		}
+		else if (isset($_GET['update_user']) && $_GET['update_user'] == 2) 
+		{
+			$controller_authentification->modifier_user();
+		}
+		else if (isset($_GET['update_user'])) 
+		{
+			$controller_authentification->afficher_users();
+		}
+		else 
+		{
+			$controller_authentification->afficher_users();
+		}
+	}
 	else if (isset($_GET['gestion_articles'])) 
 	{
 		$controller_article->accueil();

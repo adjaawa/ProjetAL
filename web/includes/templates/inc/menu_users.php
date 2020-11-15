@@ -12,6 +12,11 @@
     </div>
     <div class="row menuR">
         <div class="col-md-12 menu">
+            <a href="index.php?creation_user=1"><div class="row bordureMenu" style="font-weight: bold;">Créer utilisateur</div></a>
+        </div>
+    </div>
+    <div class="row menuR">
+        <div class="col-md-12 menu">
             <a href="index.php?modification_user=1"><div class="row bordureMenu" style="font-weight: bold;">Modifier/Supprimer utilisateurs</div></a>
         </div>
     </div>

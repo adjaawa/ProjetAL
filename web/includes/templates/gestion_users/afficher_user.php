@@ -47,9 +47,9 @@
                     <th scope="col">#</th>
                     <th scope="col">Nom</th>
                     <th scope="col">Prenom</th>
-                    <th scope="col">email</th>  
-                    <th scope="col">username</th>  
-                    <th scope="col">profil</th>  
+                    <th scope="col">Email</th>  
+                    <th scope="col">Username</th>  
+                    <th scope="col">Profil</th>  
                     </tr>
                 </thead>
                 <tbody>
@@ -62,7 +62,7 @@
                     <tr>
                     <th scope="row"><?php echo $user->id ?></th>
                     <td><?php echo $user->nom ?></td>
-                    <td><?php echo $user->prenom ?>tto</td>
+                    <td><?php echo $user->prenom ?></td>
                     <td><?php echo $user->email ?></td>
                     <td><?php echo $user->username ?></td>
                     <td><?php echo $user->profil ?></td>

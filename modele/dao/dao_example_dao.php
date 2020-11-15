@@ -41,10 +41,6 @@
 		public function post_article($titre, $categorie, $resume, $contenu, $id)
 		{
 			require("connect_bd.php"); 
-			
-			// $sql = "INSERT INTO articles (titre, resume, contenu, date_pub, id_auteur, id_categorie) VALUES ($titre, $resume, $contenu, now(), $id, $categorie)";
-			// $query = $bdd->exec($sql);
-			// // $query->execute();
 
 			$sql="INSERT INTO articles (titre, resume, contenu, date_pub, id_auteur, id_categorie) VALUES(:titre,:resume,:contenu,now(),:id_auteur,:id_categorie)";
 			$query = $bdd->prepare($sql);
@@ -116,8 +112,6 @@
 			
 			return $query;
 		}
-
-
 
 
 		public function get_details_article($article)
