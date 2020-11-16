@@ -9,7 +9,7 @@
     }
     else
     {
-        $page = 0; //si elle n'existe pas, on la met a 0 (page 0)
+        $page = $data[0]->id - 1; //si elle n'existe pas, on 
     }
 
     //On défini l'id minimum de l'article pour être affiché
