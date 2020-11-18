@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:server" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:server">
+<types>
+<xsd:schema targetNamespace="urn:server"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+</xsd:schema>
+</types>
+<message name="helloRequest">
+  <part name="username" type="xsd:string" /></message>
+<message name="helloResponse">
+  <part name="return" type="xsd:string" /></message>
+<message name="UsersDao.get_users_soapRequest"></message>
+<message name="UsersDao.get_users_soapResponse">
+  <part name="return" type="xsd:json" /></message>
+<message name="UsersDao.add_user_soapRequest">
+  <part name="prenom" type="xsd:string" />
+  <part name="nom" type="xsd:string" />
+  <part name="email" type="xsd:string" />
+  <part name="username" type="xsd:string" />
+  <part name="password" type="xsd:string" />
+  <part name="profil" type="xsd:string" /></message>
+<message name="UsersDao.add_user_soapResponse">
+  <part name="return" type="xsd:arrays" /></message>
+<message name="UsersDao.delete_user_soapRequest">
+  <part name="user" type="xsd:string" /></message>
+<message name="UsersDao.delete_user_soapResponse">
+  <part name="return" type="xsd:arrays" /></message>
+<message name="UsersDao.update_user_soapRequest">
+  <part name="prenom" type="xsd:string" />
+  <part name="nom" type="xsd:string" />
+  <part name="email" type="xsd:string" />
+  <part name="username" type="xsd:string" />
+  <part name="password" type="xsd:string" />
+  <part name="id" type="xsd:int" /></message>
+<message name="UsersDao.update_user_soapResponse">
+  <part name="return" type="xsd:arrays" /></message>
+<portType name="serverPortType">
+  <operation name="hello">
+    <input message="tns:helloRequest"/>
+    <output message="tns:helloResponse"/>
+  </operation>
+  <operation name="UsersDao.get_users_soap">
+    <input message="tns:UsersDao.get_users_soapRequest"/>
+    <output message="tns:UsersDao.get_users_soapResponse"/>
+  </operation>
+  <operation name="UsersDao.add_user_soap">
+    <input message="tns:UsersDao.add_user_soapRequest"/>
+    <output message="tns:UsersDao.add_user_soapResponse"/>
+  </operation>
+  <operation name="UsersDao.delete_user_soap">
+    <input message="tns:UsersDao.delete_user_soapRequest"/>
+    <output message="tns:UsersDao.delete_user_soapResponse"/>
+  </operation>
+  <operation name="UsersDao.update_user_soap">
+    <input message="tns:UsersDao.update_user_soapRequest"/>
+    <output message="tns:UsersDao.update_user_soapResponse"/>
+  </operation>
+</portType>
+<binding name="serverBinding" type="tns:serverPortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="hello">
+    <soap:operation soapAction="http://localhost/tp_al/mvc/avec_mvc/soap-ws/soap-ws/server.php/hello" style="rpc"/>
+    <input><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="UsersDao.get_users_soap">
+    <soap:operation soapAction="http://localhost/tp_al/mvc/avec_mvc/soap-ws/soap-ws/server.php/UsersDao.get_users_soap" style="rpc"/>
+    <input><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="UsersDao.add_user_soap">
+    <soap:operation soapAction="http://localhost/tp_al/mvc/avec_mvc/soap-ws/soap-ws/server.php/UsersDao.add_user_soap" style="rpc"/>
+    <input><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="UsersDao.delete_user_soap">
+    <soap:operation soapAction="http://localhost/tp_al/mvc/avec_mvc/soap-ws/soap-ws/server.php/UsersDao.delete_user_soap" style="rpc"/>
+    <input><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="UsersDao.update_user_soap">
+    <soap:operation soapAction="http://localhost/tp_al/mvc/avec_mvc/soap-ws/soap-ws/server.php/UsersDao.update_user_soap" style="rpc"/>
+    <input><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="server">
+  <port name="serverPort" binding="tns:serverBinding">
+    <soap:address location="http://localhost/tp_al/mvc/avec_mvc/soap-ws/soap-ws/server.php"/>
+  </port>
+</service>
+</definitions>

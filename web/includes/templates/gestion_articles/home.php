@@ -64,7 +64,7 @@
                     <tr>
                     <th scope="row"><?php echo $article->id ?></th>
                     <td><?php echo $article->titre ?></td>
-                    <td><?php echo $article->resume ?>tto</td>
+                    <td><?php echo $article->resume ?></td>
                     <td><?php echo $article->date_pub ?></td>
                     </tr>
                 

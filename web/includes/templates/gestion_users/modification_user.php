@@ -53,9 +53,9 @@
                         <th scope="col">#</th>
                         <th scope="col">Nom</th>
                         <th scope="col">Prenom</th>
-                        <th scope="col">email</th>  
-                        <th scope="col">username</th>  
-                        <th scope="col">profil</th>  
+                        <th scope="col">Email</th>  
+                        <th scope="col">Username</th>  
+                        <th scope="col">Profil</th>  
                         <th scope="col">Actions</th>  
                         </tr>
                     </thead>

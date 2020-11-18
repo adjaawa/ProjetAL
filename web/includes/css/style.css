@@ -67,3 +67,27 @@
 	border-bottom: solid 5px gray ;
 	
 }
+
+.fc
+{
+	height: 30px !important;
+	padding: 32px;
+	background-color: #EEEEEE;
+	font-size: 15px;
+	font-weight: bolder;
+}
+
+input::placeholder 
+{
+	font-weight: bolder;
+	font-size: 15px;
+}
+
+.btn-con
+{
+	height: 65px;
+	width: 100%;
+	font-size: 20px;
+	font-weight: bolder;
+	background-color:#827ffe;
+}

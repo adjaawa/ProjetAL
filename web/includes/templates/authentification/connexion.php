@@ -36,20 +36,23 @@
 ?>
 
 <div class="row">
-    <div class="col-md-6 col-md-offset-3"> 
+    <div class="col-md-4 col-md-offset-4"> 
         <center>
-            <h2>LOGIN</h2>
+            <h2 style="font-weight: 800;">LOGIN</h2>
         </center>
         <br>
-
+        <br>
         <form action="" method="POST">
             <div class="form-group">
-                <input type="text" class="form-control" id="exampleInputEmail1" name="username" placeholder="Username">
+                <input type="text" class="form-control fc" id="exampleInputEmail1" name="username" placeholder="Username">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+                <input type="password" class="form-control fc" id="exampleInputPassword1" name="password" placeholder="Password">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <br>
+            <!-- <div class="col-md-12"> -->
+                <button type="submit" class="btn btn-primary btn-con">LOG IN</button>
+            <!-- </div>    -->
         </form>
 
     </div>
