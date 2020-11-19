@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Le front controller qui gere toutes les demandes
+ * Le front controller
  */
 
 require "src/Database/database.php";
