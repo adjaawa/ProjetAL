@@ -36,6 +36,7 @@
                         'email' => 'xsd:string',
                         'username' => 'xsd:string',
                         'password' => 'xsd:string',
+                        'profil' => 'xsd:string',
                         'id' => 'xsd:int'),
                         array ('return' => 'xsd:string')
                     );

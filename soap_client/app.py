@@ -18,6 +18,11 @@ print("User 1")
 #     for value in i.values():
 #         print(value)
 
+# for i in result:
+#     print(i['prenom']) 
+#     print(i['nom'])
+
 for i in result:
-    print(i['prenom'])
-    print(i['nom'])
+    if ((i['username'] == "falilou") and (i['password'] == "falilougueye") and (i['profil'] == "admin")):
+        print(i)
+        
