@@ -9,13 +9,6 @@
     $server = new soap_server();
     $server-> configureWSDL ('server', 'urn:server');
 
-
-    // Register the "hello" method to expose it
-    $server -> register ('hello',
-                        array ('username' => 'xsd:string'),
-                        array ('return' => 'xsd:string')
-
-                    );
     $server -> register ("get_users_soap", array (), array('return' => 'xsd:string'));
     $server -> register ('add_user_soap',
                         array ('prenom' => 'xsd:string',
@@ -41,14 +34,6 @@
                         array ('return' => 'xsd:string')
                     );
 
-    function hello ($username) {
-        return 'Hello, '.$username. '!';
-    }
-
-    // $u = new UsersDao();
-    // $res = $u->get_users();
-
-    // echo json_encode($res);
 
     $HTTP_RAW_POST_DATA = isset ($HTTP_RAW_POST_DATA)
         ? $HTTP_RAW_POST_DATA : '';

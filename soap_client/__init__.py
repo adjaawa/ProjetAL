@@ -36,7 +36,7 @@ def modifier_user(username):
     for i in result:
         if (i['username'] == username):
             return render_template('modifier.php', user=i)
-
+ 
     return render_template('gestion.html')
 
 
@@ -50,13 +50,10 @@ def modifier():
     password = request.form['password'] 
     profil = request.form['profil'] 
     id = request.form['id'] 
-
-
     
     result = client.service.update_user_soap(prenom, nom, email, username, password, profil, id)
 
     return redirect(url_for('home'))
-
 
 
 

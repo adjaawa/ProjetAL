@@ -1,6 +1,6 @@
 <?php 
     //choix du nombre d'article par page
-    $nb_articles_par_page = '1';
+    $nb_articles_par_page = '2';
 
     //Verification de la valeur $_GET['page']
     if(isset($_GET['page']) && $_GET['page'] != '')
@@ -9,7 +9,7 @@
     }
     else
     {
-        $page = $data[0]->id - 1; //si elle n'existe pas, on 
+        $page = 0; //si elle n'existe pas, on 
     }
 
     //On défini l'id minimum de l'article pour être affiché
@@ -40,15 +40,17 @@
                     <input type="hidden" name="article" value="<?php echo $article->id  ?>">
                 </div>
 
-                <nav aria-label="...">
-                    <ul class="pager">
-                        <li class="<?php if ($page == 0) { echo "previous disabled";} else { echo "previous"; }?>"><a href="?page=<?php if ($page == 0) { echo $page;} else { echo $page-1;} ?>"><span aria-hidden="true">&larr;</span>précédent</a></li>
-                        <li class="<?php if ($page == $max_page-1) { echo "next disabled";} else { echo "next"; }?>"><a href="?page=<?php if ($page == $max_page-1) { echo $page;} else {echo $page+1;} ?>">suivant<span aria-hidden="true">&rarr;</span></a></li>
-                    </ul>
-                </nav>
+                
             </form>
 
 <?php   
     }
     endforeach; 
 ?>  
+
+                <nav aria-label="...">
+                    <ul class="pager">
+                        <li class="<?php if ($page == 0) { echo "previous disabled";} else { echo "previous"; }?>"><a href="?page=<?php if ($page == 0) { echo $page;} else { echo $page-1;} ?>"><span aria-hidden="true">&larr;</span>précédent</a></li>
+                        <li class="<?php if ($page == $max_page-1) { echo "next disabled";} else { echo "next"; }?>"><a href="?page=<?php if ($page == $max_page-1) { echo $page;} else {echo $page+1;} ?>">suivant<span aria-hidden="true">&rarr;</span></a></li>
+                    </ul>
+                </nav>
